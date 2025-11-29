@@ -225,7 +225,7 @@ img {
 .home__img {
   position: absolute;
   right: 0;
-  bottom: 200;
+  bottom: 200px;
   width: 360px;
 } 
 .home__blob { 
