@@ -33,6 +33,31 @@
     --smaller-font-size: .875rem;
   }
 }
+@media screen and (max-width: 576px) {
+  .home__img {
+    position: relative;  /* stack in flow for very small screens */
+    width: 240px;
+    margin: 0 auto;      /* center on small screens */
+    right: auto;
+    bottom: auto;
+    padding: 6px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__img {
+    width: 380px;    /* slightly larger for tablets & desktop */
+    right: 3%;
+    bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home__img {
+    width: 440px;   /* large screens */
+  }
+}
+
 
 /*===== BASE =====*/
 *, ::before, ::after {
@@ -179,6 +204,7 @@ img {
 }
 
 /*===== HOME =====*/
+
 .home {
   position: relative;
   row-gap: 5rem;
@@ -207,24 +233,33 @@ img {
 .home__social-icon:hover {
   color: var(--first-color);
 }
-
+/* === FIX HOME IMAGE VISIBILITY & WHITE BACKGROUND === */
 .home__img {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 300px; /* increase if needed */
+  right: 2%;       /* small right gap from the edge */
+  bottom: 2%;      /* small bottom gap from the edge */
+  width: 330px;    /* base width for desktop - you can tweak */
+  max-width: 45vw; /* ensures it scales down on small screens */
+  background-color: #ffffff; /* white background */
+  padding: 10px;   /* optional spacing around the image */
+  border-radius: 10px;      /* soft corners */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08); /* subtle shadow */
+  overflow: hidden; /* prevents overflow/cropping artifacts */
+  z-index: 2;       /* keep image on top of background elements */
 }
 
 .home__blob-img {
+  display: block;
   width: 100%;
-  max-width: 380px;
+  height: auto;
+  object-fit: contain;   /* make whole image visible and keep aspect ratio */
+  vertical-align: middle;
 }
+
 
 
 .home__blob {
-  fill: var(--first-color);
-}
-
+  fill: var(--first-color); } 
 
 /*BUTTONS*/
 .button {
