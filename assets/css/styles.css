@@ -207,18 +207,24 @@ img {
 .home__social-icon:hover {
   color: var(--first-color);
 }
+
 .home__img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 260px;
+  width: 300px; /* increase if needed */
 }
+
+.home__blob-img {
+  width: 100%;
+  max-width: 380px;
+}
+
+
 .home__blob {
   fill: var(--first-color);
 }
-.home__blob-img {
-  width: 360px;
-}
+
 
 /*BUTTONS*/
 .button {
